@@ -76,7 +76,7 @@
 <div class="flex flex-col gap-4 p-4">
 <div class="grid grid-cols-2 gap-4">
 <!-- Privato Button -->
-<button class="group relative flex flex-col justify-between p-5 rounded-2xl bg-gradient-to-br from-[#137fec] to-[#0b4e92] text-white shadow-lg aspect-[4/5] overflow-hidden">
+<a href="../account_privati/code.html" class="group relative flex flex-col justify-between p-5 rounded-2xl bg-gradient-to-br from-[#137fec] to-[#0b4e92] text-white shadow-lg aspect-[4/5] overflow-hidden">
 <div class="absolute right-[-20px] top-[-20px] opacity-10 group-hover:opacity-20 transition-opacity">
 <span class="material-symbols-outlined text-[150px]">lock</span>
 </div>
@@ -87,9 +87,9 @@
 <h3 class="text-xl font-bold mb-1">Privato</h3>
 <p class="text-blue-100 text-sm font-medium">Cassaforte Personale</p>
 </div>
-</button>
+</a>
 <!-- Azienda Button -->
-<button class="group relative flex flex-col justify-between p-5 rounded-2xl bg-gradient-to-br from-[#10b981] to-[#047857] text-white shadow-lg aspect-[4/5] overflow-hidden">
+<a href="../account_azienda/code.html" class="group relative flex flex-col justify-between p-5 rounded-2xl bg-gradient-to-br from-[#10b981] to-[#047857] text-white shadow-lg aspect-[4/5] overflow-hidden">
 <div class="absolute right-[-20px] top-[-20px] opacity-10 group-hover:opacity-20 transition-opacity">
 <span class="material-symbols-outlined text-[150px]">apartment</span>
 </div>
@@ -100,10 +100,10 @@
 <h3 class="text-xl font-bold mb-1">Azienda</h3>
 <p class="text-green-100 text-sm font-medium">Gestione Risorse</p>
 </div>
-</button>
+</a>
 </div>
 <!-- Scadenze Button -->
-<button class="group relative flex flex-row items-center justify-between p-6 rounded-2xl bg-gradient-to-r from-[#f97316] to-[#c2410c] text-white shadow-lg w-full overflow-hidden">
+<a href="../scadenze/code.html" class="group relative flex flex-row items-center justify-between p-6 rounded-2xl bg-gradient-to-r from-[#f97316] to-[#c2410c] text-white shadow-lg w-full overflow-hidden">
 <div class="absolute right-[-10px] bottom-[-40px] opacity-10 group-hover:opacity-20 transition-opacity">
 <span class="material-symbols-outlined text-[180px]">calendar_month</span>
 </div>
@@ -114,7 +114,7 @@
 <div class="flex items-center justify-center w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm z-10">
 <span class="material-symbols-outlined text-[32px]">event_upcoming</span>
 </div>
-</button>
+</a>
 </div>
 <!-- Spacer for visual separation -->
 <div class="px-4 pt-2 pb-2">
@@ -122,21 +122,23 @@
 </div>
 <!-- Card (Next Deadline) -->
 <div class="px-4 pb-24">
-<div class="flex items-stretch justify-between gap-4 rounded-xl bg-white dark:bg-[#1c2127] p-4 shadow-[0_0_4px_rgba(0,0,0,0.05)] border border-[#dce0e5] dark:border-[#283039]">
+<div class="flex items-stretch justify-between gap-4 rounded-xl bg-[#1c2127] p-4">
 <div class="flex flex-[2_2_0px] flex-col gap-3 justify-center">
 <div class="flex flex-col gap-1">
 <div class="flex items-center gap-2 mb-1">
-<div class="px-2 py-0.5 rounded-full bg-orange-100 dark:bg-orange-500/20 text-orange-600 dark:text-orange-400 text-xs font-bold uppercase tracking-wide">Urgente</div>
+<div class="px-2 py-0.5 rounded-full bg-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-wide">Urgente</div>
 </div>
-<p class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Assicurazione Auto</p>
-<p class="text-[#637588] dark:text-[#9dabb9] text-sm font-normal leading-normal">Scade tra 2 giorni</p>
+<p class="text-white text-lg font-bold leading-tight">Assicurazione Auto</p>
+<p class="text-[#9dabb9] text-sm font-normal leading-normal">Scade tra 2 giorni</p>
 </div>
-<button class="flex items-center gap-1 text-primary text-sm font-bold mt-1 group w-fit">
+<a href="../dettaglio_scadenza/code.html" class="flex items-center gap-1 text-primary text-sm font-bold mt-1 group w-fit">
 <span>Dettagli</span>
 <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</button>
+</a>
 </div>
-<div class="w-24 bg-center bg-no-repeat bg-cover rounded-lg shrink-0 self-stretch" data-alt="Icon representing car insurance" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBTZJXbJHIdReao5x_RumDalBMOoGJYaF-rj8W31rSPj3BgUmBGfn3bHTxElx6aidMJxG7V4cNhV_L026_yDqIqqdeStlX-ntf4lTUCvBtWpCw8TiAIFW5Fi8sz3zNIeLmNSOkfHuQp7NbbStUZlev4t3WLx_5_95FFDYdI8dK5NK5kQTu-3mJKl8-O4rymxKpDfE5p6hI-S1GlYOgqcLpLG8hxPYh1NH5qRZHymUblVkadBTM7_E56iuwkPC_IR7IsjJf-V1Z88pI");'></div>
+<div class="flex items-center justify-center w-24 shrink-0 self-stretch">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+</div>
 </div>
 </div>
 <!-- BottomNavBar -->
@@ -152,13 +154,13 @@
 <span class="material-symbols-outlined text-[24px]">search</span>
 <p class="text-xs font-medium leading-normal tracking-[0.015em]">Cerca</p>
 </a>
-<a class="flex flex-1 flex-col items-center justify-end gap-1 text-[#637588] dark:text-[#9dabb9] p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors" href="#">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-[#637588] dark:text-[#9dabb9] p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors" href="../aggiungi_account_privato_1/code.html">
 <div class="rounded-full bg-primary/10 dark:bg-primary/20 p-1 mb-[-4px] mt-[-4px]">
 <span class="material-symbols-outlined text-[28px] text-primary">add_circle</span>
 </div>
 <p class="text-xs font-medium leading-normal tracking-[0.015em] text-primary">Aggiungi</p>
 </a>
-<a class="flex flex-1 flex-col items-center justify-end gap-1 text-[#637588] dark:text-[#9dabb9] p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors" href="#">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-[#637588] dark:text-[#9dabb9] p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors" href="../impostazioni/code.html">
 <span class="material-symbols-outlined text-[24px]">settings</span>
 <p class="text-xs font-medium leading-normal tracking-[0.015em]">Opzioni</p>
 </a>

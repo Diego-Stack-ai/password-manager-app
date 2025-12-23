@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="dark" lang="it">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Recupera Password</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body>
+    <div class="relative flex h-full min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden font-display transition-colors duration-200">
+        <!-- Header / Navigation -->
+        <div class="flex items-center p-4 justify-between">
+            <a href="../accedi/code.html" class="text-slate-900 dark:text-white flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </a>
+            <h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Recupera Password</h2>
+        </div>
+        <!-- Main Content Scrollable Area -->
+        <div class="flex-1 flex flex-col items-center justify-center w-full px-4 sm:px-6 pb-6">
+            <!-- Hero / Logo Section -->
+            <div class="flex flex-col items-center w-full max-w-sm mb-8">
+                <div class="relative w-32 h-32 mb-6 rounded-full overflow-hidden shadow-2xl shadow-primary/20 ring-4 ring-primary/20">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary to-purple-600 opacity-80 mix-blend-multiply"></div>
+                    <div class="w-full h-full bg-center bg-cover flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-6xl">lock_reset</span>
+                    </div>
+                </div>
+                <h1 class="text-slate-900 dark:text-white tracking-tight text-[32px] font-extrabold leading-tight text-center">Password Dimenticata?</h1>
+                <p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal mt-2 text-center max-w-[280px]">
+                    Nessun problema. Inserisci il tuo indirizzo email e ti invieremo un link per resettarla.
+                </p>
+            </div>
+            <!-- Form Section -->
+            <div class="w-full max-w-sm flex flex-col gap-5">
+                <!-- Email Field -->
+                <div class="flex flex-col gap-2">
+                    <label class="text-slate-900 dark:text-white text-base font-medium leading-normal pl-1">Email</label>
+                    <div class="relative flex items-center">
+                        <span class="absolute left-4 text-slate-400 material-symbols-outlined text-[20px]">email</span>
+                        <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border-slate-200 dark:border-none bg-white dark:bg-[#283039] focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-[#9dabb9] pl-12 pr-4 text-base font-normal leading-normal shadow-sm transition-all" placeholder="Il tuo indirizzo email" type="email" value="" />
+                    </div>
+                </div>
+                <!-- Spacer -->
+                <div class="h-2"></div>
+                <!-- Primary Action Button -->
+                <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-primary hover:bg-blue-600 text-white text-base font-bold leading-normal tracking-[0.015em] w-full shadow-lg shadow-primary/25 transition-all active:scale-[0.98]">
+                    <span class="truncate">INVIA LINK DI RECUPERO</span>
+                </button>
+            </div>
+        </div>
+        <!-- Footer Area -->
+        <div class="w-full p-6 text-center">
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-normal">
+                Ricordi la password?
+                <a class="text-orange-500 hover:text-orange-400 font-bold transition-colors ml-1" href="../accedi/code.html">Accedi qui</a>
+            </p>
+            <div class="h-5"></div>
+            <!-- Bottom safe area spacing -->
+        </div>
+    </div>
+</body>
+</html>
