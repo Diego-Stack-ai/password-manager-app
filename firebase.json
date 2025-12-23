@@ -12,7 +12,13 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "cleanUrls": true
+    "cleanUrls": true,
+    "rewrites": [
+      {
+        "source": "/",
+        "destination": "/accedi/code.html"
+      }
+    ]
   },
   "storage": {
     "rules": "storage.rules"

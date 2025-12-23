@@ -52,12 +52,12 @@
 <body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white overflow-x-hidden pb-24">
 <!-- Top App Bar -->
 <div class="sticky top-0 z-50 flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between backdrop-blur-md bg-opacity-95 dark:bg-opacity-95 border-b border-gray-200 dark:border-gray-800">
-<div class="text-[#111418] dark:text-white flex size-12 shrink-0 items-center justify-center cursor-pointer rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+<a href="../account_privati/code.html" class="text-[#111418] dark:text-white flex size-12 shrink-0 items-center justify-center cursor-pointer rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
 <span class="material-symbols-outlined">arrow_back_ios_new</span>
-</div>
+</a>
 <h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Dettaglio Account</h2>
 <div class="flex w-12 items-center justify-end">
-<button class="flex size-12 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+<button class="flex size-12 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors" onclick="showFeatureNotAvailableAlert()">
 <span class="material-symbols-outlined">edit</span>
 </button>
 </div>
@@ -87,8 +87,8 @@
 <div class="pl-4 text-primary">
 <span class="material-symbols-outlined">person</span>
 </div>
-<input class="flex w-full bg-transparent border-none text-[#111418] dark:text-white h-12 px-3 text-base font-medium focus:ring-0" readonly="" value="mario.rossi@email.com"/>
-<button class="text-[#617589] hover:text-primary p-3 flex items-center justify-center border-l border-gray-100 dark:border-gray-700 transition-colors">
+<input id="username-field" class="flex w-full bg-transparent border-none text-[#111418] dark:text-white h-12 px-3 text-base font-medium focus:ring-0" readonly="" value="mario.rossi@email.com"/>
+<button class="text-[#617589] hover:text-primary p-3 flex items-center justify-center border-l border-gray-100 dark:border-gray-700 transition-colors" onclick="copyTextFromInput('username-field')">
 <span class="material-symbols-outlined">content_copy</span>
 </button>
 </div>
@@ -100,8 +100,8 @@
 <div class="pl-4 text-primary">
 <span class="material-symbols-outlined">key</span>
 </div>
-<input class="flex w-full bg-transparent border-none text-[#111418] dark:text-white h-12 px-3 text-base font-medium focus:ring-0" readonly="" type="password" value="SuperSecretPassword123"/>
-<button class="text-[#617589] hover:text-primary p-3 flex items-center justify-center border-l border-gray-100 dark:border-gray-700 transition-colors">
+<input id="password-field" class="flex w-full bg-transparent border-none text-[#111418] dark:text-white h-12 px-3 text-base font-medium focus:ring-0" readonly="" type="password" value="SuperSecretPassword123"/>
+<button class="text-[#617589] hover:text-primary p-3 flex items-center justify-center border-l border-gray-100 dark:border-gray-700 transition-colors" onclick="togglePasswordVisibility('password-field', this.querySelector('span'))">
 <span class="material-symbols-outlined">visibility</span>
 </button>
 </div>
@@ -113,8 +113,8 @@
 <div class="pl-4 text-primary">
 <span class="material-symbols-outlined">language</span>
 </div>
-<input class="flex w-full bg-transparent border-none text-primary underline decoration-primary/30 h-12 px-3 text-base font-medium focus:ring-0 cursor-pointer" readonly="" value="www.netflix.com"/>
-<button class="text-[#617589] hover:text-primary p-3 flex items-center justify-center border-l border-gray-100 dark:border-gray-700 transition-colors">
+<input id="website-field" class="flex w-full bg-transparent border-none text-primary underline decoration-primary/30 h-12 px-3 text-base font-medium focus:ring-0 cursor-pointer" readonly="" value="www.netflix.com"/>
+<button class="text-[#617589] hover:text-primary p-3 flex items-center justify-center border-l border-gray-100 dark:border-gray-700 transition-colors" onclick="openWebsite('website-field')">
 <span class="material-symbols-outlined">open_in_new</span>
 </button>
 </div>
@@ -229,7 +229,7 @@
 </div>
 <!-- Add New -->
 <div class="flex-shrink-0 w-12 flex items-center justify-center">
-<button class="size-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<button class="size-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 flex items-center justify-center hover:bg-primary hover:text-white transition-colors" onclick="showFeatureNotAvailableAlert()">
 <span class="material-symbols-outlined">add</span>
 </button>
 </div>
@@ -239,24 +239,26 @@
 </div>
 <!-- Bottom Navigation Bar -->
 <div class="fixed bottom-0 left-0 w-full bg-white dark:bg-[#1A2633] border-t border-gray-200 dark:border-gray-800 flex justify-around items-center py-3 z-50 pb-safe">
-<button class="flex flex-col items-center gap-1 group w-16">
+<a href="../home_page/code.html" class="flex flex-col items-center gap-1 group w-16">
 <span class="material-symbols-outlined text-gray-400 group-hover:text-primary text-[26px]">grid_view</span>
 <span class="text-[10px] font-medium text-gray-400 group-hover:text-primary">Home</span>
-</button>
-<button class="flex flex-col items-center gap-1 group w-16">
+</a>
+<a href="../account_privati/code.html" class="flex flex-col items-center gap-1 group w-16">
 <span class="material-symbols-outlined text-gray-400 group-hover:text-primary text-[26px]">lock</span>
 <span class="text-[10px] font-medium text-gray-400 group-hover:text-primary">Vault</span>
-</button>
-<button class="relative -top-6 bg-primary text-white rounded-full size-14 shadow-lg shadow-primary/40 flex items-center justify-center border-4 border-white dark:border-[#101922]">
+</a>
+<button class="relative -top-6 bg-primary text-white rounded-full size-14 shadow-lg shadow-primary/40 flex items-center justify-center border-4 border-white dark:border-[#101922]" onclick="showFeatureNotAvailableAlert()">
 <span class="material-symbols-outlined text-[30px]">add</span>
 </button>
-<button class="flex flex-col items-center gap-1 group w-16">
+<a href="#" class="flex flex-col items-center gap-1 group w-16">
 <span class="material-symbols-outlined text-primary text-[26px]">description</span>
 <span class="text-[10px] font-medium text-primary">Dettagli</span>
-</button>
-<button class="flex flex-col items-center gap-1 group w-16">
+</a>
+<a href="../impostazioni/code.html" class="flex flex-col items-center gap-1 group w-16">
 <span class="material-symbols-outlined text-gray-400 group-hover:text-primary text-[26px]">settings</span>
 <span class="text-[10px] font-medium text-gray-400 group-hover:text-primary">Opzioni</span>
-</button>
+</a>
 </div>
+
+<script src="../assets/js/app.js"></script>
 </body></html>
