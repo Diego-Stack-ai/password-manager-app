@@ -57,7 +57,7 @@
 </a>
 <h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Dettaglio Account</h2>
 <div class="flex w-12 items-center justify-end">
-<button class="flex size-12 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors" onclick="showFeatureNotAvailableAlert()">
+<button onclick="showFeatureNotAvailableAlert()" class="flex size-12 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
 <span class="material-symbols-outlined">edit</span>
 </button>
 </div>
@@ -87,8 +87,8 @@
 <div class="pl-4 text-primary">
 <span class="material-symbols-outlined">person</span>
 </div>
-<input id="username-field" class="flex w-full bg-transparent border-none text-[#111418] dark:text-white h-12 px-3 text-base font-medium focus:ring-0" readonly="" value="mario.rossi@email.com"/>
-<button class="text-[#617589] hover:text-primary p-3 flex items-center justify-center border-l border-gray-100 dark:border-gray-700 transition-colors" onclick="copyTextFromInput('username-field')">
+<input id="username" class="flex w-full bg-transparent border-none text-[#111418] dark:text-white h-12 px-3 text-base font-medium focus:ring-0" readonly="" value="mario.rossi@email.com"/>
+<button onclick="copyTextFromElement('username')" class="text-[#617589] hover:text-primary p-3 flex items-center justify-center border-l border-gray-100 dark:border-gray-700 transition-colors">
 <span class="material-symbols-outlined">content_copy</span>
 </button>
 </div>
@@ -100,9 +100,9 @@
 <div class="pl-4 text-primary">
 <span class="material-symbols-outlined">key</span>
 </div>
-<input id="password-field" class="flex w-full bg-transparent border-none text-[#111418] dark:text-white h-12 px-3 text-base font-medium focus:ring-0" readonly="" type="password" value="SuperSecretPassword123"/>
-<button class="text-[#617589] hover:text-primary p-3 flex items-center justify-center border-l border-gray-100 dark:border-gray-700 transition-colors" onclick="togglePasswordVisibility('password-field', this.querySelector('span'))">
-<span class="material-symbols-outlined">visibility</span>
+<input id="password" class="flex w-full bg-transparent border-none text-[#111418] dark:text-white h-12 px-3 text-base font-medium focus:ring-0" readonly="" type="password" value="SuperSecretPassword123"/>
+<button onclick="togglePasswordVisibility('password', 'toggle-icon')" class="text-[#617589] hover:text-primary p-3 flex items-center justify-center border-l border-gray-100 dark:border-gray-700 transition-colors">
+<span id="toggle-icon" class="material-symbols-outlined">visibility</span>
 </button>
 </div>
 </label>
@@ -113,8 +113,8 @@
 <div class="pl-4 text-primary">
 <span class="material-symbols-outlined">language</span>
 </div>
-<input id="website-field" class="flex w-full bg-transparent border-none text-primary underline decoration-primary/30 h-12 px-3 text-base font-medium focus:ring-0 cursor-pointer" readonly="" value="www.netflix.com"/>
-<button class="text-[#617589] hover:text-primary p-3 flex items-center justify-center border-l border-gray-100 dark:border-gray-700 transition-colors" onclick="openWebsite('website-field')">
+<input id="website" class="flex w-full bg-transparent border-none text-primary underline decoration-primary/30 h-12 px-3 text-base font-medium focus:ring-0 cursor-pointer" readonly="" value="https://www.netflix.com"/>
+<button onclick="openLink(document.getElementById('website').value)" class="text-[#617589] hover:text-primary p-3 flex items-center justify-center border-l border-gray-100 dark:border-gray-700 transition-colors">
 <span class="material-symbols-outlined">open_in_new</span>
 </button>
 </div>
@@ -229,7 +229,7 @@
 </div>
 <!-- Add New -->
 <div class="flex-shrink-0 w-12 flex items-center justify-center">
-<button class="size-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 flex items-center justify-center hover:bg-primary hover:text-white transition-colors" onclick="showFeatureNotAvailableAlert()">
+<button class="size-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
 <span class="material-symbols-outlined">add</span>
 </button>
 </div>
@@ -247,18 +247,17 @@
 <span class="material-symbols-outlined text-gray-400 group-hover:text-primary text-[26px]">lock</span>
 <span class="text-[10px] font-medium text-gray-400 group-hover:text-primary">Vault</span>
 </a>
-<button class="relative -top-6 bg-primary text-white rounded-full size-14 shadow-lg shadow-primary/40 flex items-center justify-center border-4 border-white dark:border-[#101922]" onclick="showFeatureNotAvailableAlert()">
+<button onclick="showFeatureNotAvailableAlert()" class="relative -top-6 bg-primary text-white rounded-full size-14 shadow-lg shadow-primary/40 flex items-center justify-center border-4 border-white dark:border-[#101922]">
 <span class="material-symbols-outlined text-[30px]">add</span>
 </button>
-<a href="#" class="flex flex-col items-center gap-1 group w-16">
+<button class="flex flex-col items-center gap-1 group w-16">
 <span class="material-symbols-outlined text-primary text-[26px]">description</span>
 <span class="text-[10px] font-medium text-primary">Dettagli</span>
-</a>
+</button>
 <a href="../impostazioni/code.html" class="flex flex-col items-center gap-1 group w-16">
 <span class="material-symbols-outlined text-gray-400 group-hover:text-primary text-[26px]">settings</span>
 <span class="text-[10px] font-medium text-gray-400 group-hover:text-primary">Opzioni</span>
 </a>
 </div>
-
 <script src="../assets/js/app.js"></script>
 </body></html>

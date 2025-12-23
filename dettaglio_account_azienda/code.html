@@ -57,12 +57,12 @@
 <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden pb-24">
 <!-- Top App Bar -->
 <div class="flex items-center bg-white dark:bg-[#1a2632] p-4 pb-2 justify-between sticky top-0 z-20 shadow-sm">
-<a href="../account_azienda/code.html" class="text-[#111418] dark:text-white flex size-12 shrink-0 items-center justify-center cursor-pointer rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<a href="../lista_aziende/code.html" class="text-[#111418] dark:text-white flex size-12 shrink-0 items-center justify-center cursor-pointer rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
 <span class="material-symbols-outlined">arrow_back</span>
 </a>
 <h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Dettaglio Account</h2>
-<div class="flex w-12 items-center justify-end cursor-pointer" onclick="showFeatureNotAvailableAlert()">
-<p class="text-primary text-base font-bold leading-normal tracking-[0.015em] shrink-0">Modifica</p>
+<div class="flex w-12 items-center justify-end cursor-pointer">
+<button onclick="showFeatureNotAvailableAlert()" class="text-primary text-base font-bold leading-normal tracking-[0.015em] shrink-0">Modifica</button>
 </div>
 </div>
 <!-- Header Image / Brand Section -->
@@ -96,8 +96,8 @@
 <div class="mb-4">
 <p class="text-[#617589] dark:text-gray-400 text-xs font-medium uppercase tracking-wide pb-1.5">Utente / Email</p>
 <div class="flex w-full items-center rounded-xl bg-background-light dark:bg-background-dark border border-[#dbe0e6] dark:border-gray-700 overflow-hidden">
-<input id="email-field" class="flex w-full bg-transparent text-[#111418] dark:text-white h-12 px-4 text-base font-medium focus:outline-none" readonly="" value="admin@azienda.it"/>
-<button class="flex h-12 w-12 items-center justify-center text-[#617589] dark:text-gray-400 hover:text-primary transition-colors border-l border-[#dbe0e6] dark:border-gray-700" onclick="copyTextFromInput('email-field')">
+<input id="username" class="flex w-full bg-transparent text-[#111418] dark:text-white h-12 px-4 text-base font-medium focus:outline-none" readonly="" value="admin@azienda.it"/>
+<button onclick="copyTextFromElement('username')" class="flex h-12 w-12 items-center justify-center text-[#617589] dark:text-gray-400 hover:text-primary transition-colors border-l border-[#dbe0e6] dark:border-gray-700">
 <span class="material-symbols-outlined text-[20px]">content_copy</span>
 </button>
 </div>
@@ -106,11 +106,11 @@
 <div class="mb-4">
 <p class="text-[#617589] dark:text-gray-400 text-xs font-medium uppercase tracking-wide pb-1.5">Password</p>
 <div class="flex w-full items-center rounded-xl bg-background-light dark:bg-background-dark border border-[#dbe0e6] dark:border-gray-700 overflow-hidden">
-<input id="password-field-company" class="flex w-full bg-transparent text-[#111418] dark:text-white h-12 px-4 text-base font-medium focus:outline-none" readonly="" type="password" value="SuperSecretPass123!"/>
-<button class="flex h-12 w-10 items-center justify-center text-[#617589] dark:text-gray-400 hover:text-primary transition-colors" onclick="togglePasswordVisibility('password-field-company', this.querySelector('span'))">
-<span class="material-symbols-outlined text-[20px]">visibility</span>
+<input id="password" class="flex w-full bg-transparent text-[#111418] dark:text-white h-12 px-4 text-base font-medium focus:outline-none" readonly="" type="password" value="SuperSecretPass123!"/>
+<button onclick="togglePasswordVisibility('password', 'toggle-icon')" class="flex h-12 w-10 items-center justify-center text-[#617589] dark:text-gray-400 hover:text-primary transition-colors">
+<span id="toggle-icon" class="material-symbols-outlined text-[20px]">visibility</span>
 </button>
-<button class="flex h-12 w-12 items-center justify-center text-[#617589] dark:text-gray-400 hover:text-primary transition-colors border-l border-[#dbe0e6] dark:border-gray-700" onclick="copyTextFromInput('password-field-company')">
+<button onclick="copyTextFromElement('password')" class="flex h-12 w-12 items-center justify-center text-[#617589] dark:text-gray-400 hover:text-primary transition-colors border-l border-[#dbe0e6] dark:border-gray-700">
 <span class="material-symbols-outlined text-[20px]">content_copy</span>
 </button>
 </div>
@@ -119,8 +119,8 @@
 <div>
 <p class="text-[#617589] dark:text-gray-400 text-xs font-medium uppercase tracking-wide pb-1.5">Sito Web</p>
 <div class="flex w-full items-center rounded-xl bg-background-light dark:bg-background-dark border border-[#dbe0e6] dark:border-gray-700 overflow-hidden group">
-<input id="website-field-company" class="flex w-full bg-transparent text-primary h-12 px-4 text-base font-medium focus:outline-none underline decoration-primary/30" readonly="" value="admin.google.com"/>
-<button class="flex h-12 w-12 items-center justify-center text-primary hover:bg-primary/10 transition-colors border-l border-[#dbe0e6] dark:border-gray-700" onclick="openWebsite('website-field-company')">
+<input id="website" class="flex w-full bg-transparent text-primary h-12 px-4 text-base font-medium focus:outline-none underline decoration-primary/30" readonly="" value="https://admin.google.com"/>
+<button onclick="openLink(document.getElementById('website').value)" class="flex h-12 w-12 items-center justify-center text-primary hover:bg-primary/10 transition-colors border-l border-[#dbe0e6] dark:border-gray-700">
 <span class="material-symbols-outlined text-[20px]">open_in_new</span>
 </button>
 </div>
@@ -144,11 +144,11 @@
 </div>
 </div>
 <div class="grid grid-cols-2 gap-4 mt-3">
-<button class="flex items-center justify-center gap-2 p-3 rounded-lg bg-background-light dark:bg-background-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onclick="showFeatureNotAvailableAlert()">
+<button class="flex items-center justify-center gap-2 p-3 rounded-lg bg-background-light dark:bg-background-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
 <span class="material-symbols-outlined text-primary text-[20px]">call</span>
 <span class="text-sm font-medium">Ufficio</span>
 </button>
-<button class="flex items-center justify-center gap-2 p-3 rounded-lg bg-background-light dark:bg-background-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onclick="showFeatureNotAvailableAlert()">
+<button class="flex items-center justify-center gap-2 p-3 rounded-lg bg-background-light dark:bg-background-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
 <span class="material-symbols-outlined text-primary text-[20px]">smartphone</span>
 <span class="text-sm font-medium">Mobile</span>
 </button>
@@ -205,7 +205,7 @@
 <div class="mb-4">
 <div class="flex items-center justify-between mb-3 px-1">
 <h3 class="text-base font-bold text-[#111418] dark:text-white">Allegati (3)</h3>
-<a href="../gestione_allegati/code.html" class="text-xs font-bold text-primary cursor-pointer">Vedi tutti</a>
+<span class="text-xs font-bold text-primary cursor-pointer">Vedi tutti</span>
 </div>
 <div class="flex gap-3 overflow-x-auto no-scrollbar pb-2">
 <!-- File Item 1 -->
@@ -244,19 +244,19 @@
 <span class="material-symbols-outlined text-[#617589] group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primary transition-colors">home</span>
 <span class="text-[10px] font-medium text-[#617589] group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primary transition-colors">Home</span>
 </a>
-<a href="../account_azienda/code.html" class="flex flex-col items-center gap-1 cursor-pointer group">
+<a href="../account_privati/code.html" class="flex flex-col items-center gap-1 cursor-pointer group">
 <span class="material-symbols-outlined text-primary fill-1">lock</span>
 <span class="text-[10px] font-medium text-primary">Vault</span>
 </a>
-<div class="flex flex-col items-center gap-1 cursor-pointer group -mt-8" onclick="showFeatureNotAvailableAlert()">
+<button onclick="showFeatureNotAvailableAlert()" class="flex flex-col items-center gap-1 cursor-pointer group -mt-8">
 <div class="bg-primary h-14 w-14 rounded-full flex items-center justify-center shadow-lg shadow-primary/30 hover:scale-105 transition-transform">
 <span class="material-symbols-outlined text-white text-3xl">add</span>
 </div>
-</div>
-<a href="#" class="flex flex-col items-center gap-1 cursor-pointer group">
+</button>
+<button onclick="showFeatureNotAvailableAlert()" class="flex flex-col items-center gap-1 cursor-pointer group">
 <span class="material-symbols-outlined text-[#617589] group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primary transition-colors">search</span>
 <span class="text-[10px] font-medium text-[#617589] group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primary transition-colors">Cerca</span>
-</a>
+</button>
 <a href="../impostazioni/code.html" class="flex flex-col items-center gap-1 cursor-pointer group">
 <span class="material-symbols-outlined text-[#617589] group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primary transition-colors">person</span>
 <span class="text-[10px] font-medium text-[#617589] group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primary transition-colors">Profilo</span>
@@ -269,6 +269,5 @@
             padding-bottom: env(safe-area-inset-bottom, 20px);
         }
     </style>
-
 <script src="../assets/js/app.js"></script>
 </body></html>
